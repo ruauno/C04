@@ -7,17 +7,17 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	while (*str != '\0')
+    int i;
+    
+    i = 0;
+	while (str[i])
 	{
-		ft_putchar(*str);
-		str++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }
 /*
 #include <stdio.h>
-
-void	ft_putstr(char *str);
-
 int		main(void)
 {
 	char str[] = "Hello, world!";
