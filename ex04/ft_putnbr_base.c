@@ -48,28 +48,31 @@ void	ft_putnbr_base(int nbr, char *base)
 }
 /*
 #include <stdio.h>
-
-void	ft_putnbr_base(int nbr, char *base);
-
-int main(void)
+int	main(void)
 {
-	char base[] = "point.";
-	unsigned long c;
+	int	nbr[] = {0,	1, 10, 1234, -1234, 2147483647, -2147483648	};
+	char	*base[] = { "0123456789", "01", "0123456789ABCDEF", "poneyvif", "", "1", "ABCD+E", "ABC-D", "ABCCD" };
+	int i;
+	int j;
 
-	c = 0;
-	while (c < (sizeof(base) - 1))
+	i = 0;
+	while (i < 9)
 	{
-		ft_putnbr_base(c, base);
-		c++;
+		j = 0;
+		while (j < 7)
+		{ 
+	
+			printf("nbr: %d => ", nbr[j]);
+			fflush(NULL);
+			ft_putnbr_base(nbr[j], base[i]);
+			printf("\n");
+			fflush(NULL);
+			j++;
+		}
+		printf("\n");
+		i++;
 	}
-	c = 0;
-	while (c < (sizeof(base) - 1))
-	{
-		ft_putnbr_base(c, base);
-		c++;
-	}
-	printf("\n");
-	ft_putnbr_base(-1, base);
-	printf("\n");
+
+	return (0);
 }
 */
