@@ -5,9 +5,11 @@ int		ft_ver_bas(char *base)
 	i = 0;
 	while (base[i] != '\0')
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == base[i + 1] ||
-				base[i] == ' ' || base[i] == '\n' || base[i] == '\t' ||
-				base[i] == '\v' || base[i] == '\f' || base[i] == '\r')
+		if (base[i] == '+' || base[i] == '-' || base[i] == base[i + 1])
+		    return (0);
+		if (base[i] == ' ' || base[i] == '\n' || base[i] == '\t')
+		    return (0);
+		if ( base[i] == '\v' || base[i] == '\f' || base[i] == '\r')
 			return (0);
 		i++;
 	}
@@ -93,11 +95,12 @@ int		ft_atoi_base(char *str, char *base)
 }
 /*
 #include <stdio.h>
-
 int ft_atoi_base(char *str, char *base);
-
 int main(void)
 {
-	printf("%d\n", ft_atoi_base("  -+-042 + 893 --", "0123456789"));
+	printf("%d\n", ft_atoi_base("  -+-065 + 6123 --", "0123456789"));
+	printf("%d\n", ft_atoi_base("  -+-867 + 7683 --", "yet4532"));
+	printf("%d\n", ft_atoi_base("  -+-233565 --", "357643524156"));
+	printf("%d\n", ft_atoi_base("  -+-2432 + 893 --", "235234665345"));
 }
 */
